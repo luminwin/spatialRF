@@ -7,8 +7,7 @@ Authors@R: c(person("Min", "Lu", , "luminwin@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1386-1315")))
 Maintainer: Min Lu <luminwin@gmail.com>
 Description: Random Forest Clustering Methods with Spatial Coordinates.
-Imports: randomForestSRC,methods,kernlab,dbscan,varPro
-Remotes: kogalur/varPro
+Imports: randomForestSRC,methods,kernlab,dbscan
 License: GPL (>= 2)
 Depends: R (>= 3.5.0)
 Encoding: UTF-8

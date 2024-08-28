@@ -26,8 +26,10 @@ if (dimReduc[1] == "PCA") {
   ydta <- obj.dimReduc$x[,1:numDims]
 }
 if (dimReduc[1] == "varPro") {
-  obj.dimReduc <- varPro::importance(varPro::unsupv(data))
-  ydta <- data[,rownames(obj.dimReduc)[1:numDims]]
+  
+  cat("PC is actually better and the github package kogalur/varPro is not ready so using PCs instead")
+  obj.dimReduc <- stats::prcomp(data, center = FALSE, scale. = FALSE)
+  ydta <- obj.dimReduc$x[,1:numDims]
 }
 
 if (lowMemory == TRUE) {rm(obj.dimReduc)} else {oReturn$obj.dimReduc <- obj.dimReduc}
