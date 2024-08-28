@@ -1,0 +1,13 @@
+importFrom("stats", "formula")
+importFrom("randomForestSRC","rfsrc","get.mv.formula")
+importFrom("varPro","unsupv","importance.varpro")
+importFrom("dbscan","dbscan","hdbscan")
+importFrom("kernlab","specc")
+importFrom("stats", "complete.cases")
+ importFrom("stats", "quantile")
+importFrom("utils", "data")
+importFrom("stats", "na.omit")
+importFrom("methods","is", "extends", "getClassDef", "getPackageName",
+               "isClassUnion", "packageSlot")
+export(srf,
+       ari)

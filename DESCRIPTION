@@ -1,0 +1,16 @@
+Package: spatialRF
+Type: Package
+Title: Random Forest Clustering Methods with Spatial Coordinates
+Version: 0.1.0
+Date: 2024-08-22
+Authors@R: c(person("Min", "Lu", , "luminwin@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-1386-1315")))
+Maintainer: Min Lu <luminwin@gmail.com>
+Description: Random Forest Clustering Methods with Spatial Coordinates.
+Imports: randomForestSRC,methods,kernlab,dbscan,varPro
+Remotes: kogalur/varPro
+License: GPL (>= 2)
+Depends: R (>= 3.5.0)
+Encoding: UTF-8
+LazyData: true
+Author: Min Lu [aut, cre] (<https://orcid.org/0000-0002-1386-1315>)
