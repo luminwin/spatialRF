@@ -20,7 +20,7 @@ srf <- function(data, coordinates,
 oReturn <- list()
 
 if (ncol(data) <= numDims) {dimReduc[1] <- "none"}
-if (dimReduc[1] == "none") {ydta <- data; oReturn$obj.dimReduc <- NULL}
+if (dimReduc[1] == "none") {ydta <- data; obj.dimReduc <- NULL}
 if (dimReduc[1] == "PCA") {
   obj.dimReduc <- stats::prcomp(data, center = FALSE, scale. = FALSE)
   ydta <- obj.dimReduc$x[,1:numDims]
