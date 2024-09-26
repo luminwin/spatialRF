@@ -55,7 +55,7 @@ if (membership == TRUE) {oReturn$membership <- obj.rf$membership}
 if (lowMemory == TRUE) {rm(obj.rf)} else {oReturn$obj.rf <- obj.rf}
 
 if (clusMethod[1] == "kmean"){
-  res <- kmean(oReturn$distance, centers= numClus )
+  res <- kmeans(oReturn$distance, centers= numClus )
   oReturn$cluster <- as.numeric(res$cluster)
 }
 
