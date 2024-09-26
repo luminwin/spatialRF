@@ -40,7 +40,7 @@ colnames(ydta) <- paste("X", 1:ncol(ydta), sep = "")
 if (splitrule[1] != "mahalanobis") {splitrule <- NULL}
 
 obj.rf <- randomForestSRC::rfsrc(randomForestSRC::get.mv.formula(colnames(ydta)),
-                data.frame(ydta, coordinates), proximity = TRUE,
+                data.frame(ydta, coordinates), distance = T,
                 ntree = ntree,
                 nodesize = nodesize,
                 splitrule = splitrule, nsplit = nsplit,
@@ -49,8 +49,7 @@ obj.rf <- randomForestSRC::rfsrc(randomForestSRC::get.mv.formula(colnames(ydta))
                 case.wt  = case.wt,
                 forest = forest,
                 seed = seed)
-prox <- obj.rf$proximity
-oReturn$distance <- exp(-prox) - exp(-1)
+oReturn$distance <- obj.rf$distance
 
 if (membership == TRUE) {oReturn$membership <- obj.rf$membership}
 if (lowMemory == TRUE) {rm(obj.rf)} else {oReturn$obj.rf <- obj.rf}
