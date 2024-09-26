@@ -1,6 +1,6 @@
 srf <- function(data, coordinates,
                 dimReduc = c("PCA", "varPro", "none"),
-                clusMethod = c("hdbscan", "spectral", "dbscan"),
+                clusMethod = c("kmean", "hdbscan", "spectral", "dbscan"),
                 numDims = 20,
                 numClus = 2,
                 eps = 0.7,
@@ -54,6 +54,10 @@ oReturn$distance <- obj.rf$distance
 if (membership == TRUE) {oReturn$membership <- obj.rf$membership}
 if (lowMemory == TRUE) {rm(obj.rf)} else {oReturn$obj.rf <- obj.rf}
 
+if (clusMethod[1] == "kmean"){
+  res <- kmean(oReturn$distance, centers= numClus )
+  oReturn$cluster <- as.numeric(res$cluster)
+}
 
 if (clusMethod[1] == "spectral"){
 res <- kernlab::specc(oReturn$distance, centers= numClus )

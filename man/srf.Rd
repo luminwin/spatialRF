@@ -11,7 +11,7 @@ The function implements multivariate random forests to calculate distance matrix
 srf(data,
   coordinates,
   dimReduc = c("PCA", "varPro", "none"),
-  clusMethod = c("hdbscan", "spectral", "dbscan"),
+  clusMethod = c("kmean", "hdbscan", "spectral", "dbscan"),
   numDims = 20,
   numClus = 2,
   eps = 0.7,
@@ -39,7 +39,7 @@ srf(data,
   \item{dimReduc}{Methods chosen for dimension reduction for the  x-variables with options c("PCA", "varPro", "none"). \code{PCA}
   means principle component analysis (default); \code{varPro} means unsupervised variable priority method; \code{none} means no dimension reduction procedure is implemented.}
 
-    \item{clusMethod}{ Methods chosen for assignming clusters based the distance matrix: "hdbscan" (default) for Hierarchical Density-Based Spatial Clustering of
+    \item{clusMethod}{ Methods chosen for assignming clusters based the distance matrix: "kmean" (default) for k-mean method, "hdbscan" for Hierarchical Density-Based Spatial Clustering of
 Applications with Noise, "spectral" for Spectral Clustering and  "dbscan" for Density-Based Spatial Clustering of Applications with
 Noise.}
 
